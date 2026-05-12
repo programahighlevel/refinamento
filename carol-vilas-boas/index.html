@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação | Carol Vilas Boas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #FAF6F0;
+    --burgundy: #2A1A0E;
+    --burgundy-light: #3A2214;
+    --gold: #C4934A;
+    --gold-light: #E8D0A8;
+    --text-dark: #1C1008;
+    --text-mid: #6B5A44;
+    --card-border: #D9C8A8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--rose);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #2A1A0E 0%, #3A2214 100%);
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(196,147,74,0.12);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 60px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .header-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .header-subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.3px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(196,147,74,0.15);
+    border: 1px solid rgba(196,147,74,0.35);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+
+  /* MAIN */
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  /* SECTION TITLE */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    margin-top: 36px;
+  }
+  .section-label .icon {
+    width: 32px; height: 32px;
+    background: var(--burgundy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--gold);
+  }
+  .section-label h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--burgundy);
+    letter-spacing: 0.3px;
+  }
+
+  /* CARDS */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    border-left: 4px solid var(--burgundy);
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 6px rgba(42,26,14,0.07);
+    animation: fadeUp 0.4s ease both;
+  }
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.10s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.20s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--burgundy);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+  }
+  .card-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-dark);
+  }
+  .card-body strong {
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+
+  /* TAG */
+  .tag {
+    display: inline-block;
+    background: var(--rose);
+    border: 1px solid var(--card-border);
+    border-radius: 100px;
+    font-size: 11px;
+    color: var(--text-mid);
+    padding: 3px 10px;
+    margin: 3px 3px 0 0;
+    letter-spacing: 0.3px;
+  }
+  .tag.urgent {
+    background: #FFF4EC;
+    border-color: #D9A070;
+    color: #7A3A0E;
+  }
+  .tag.gold {
+    background: #FBF5E8;
+    border-color: var(--gold);
+    color: #7A5A20;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin-top: 4px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+    padding: 7px 0;
+    border-bottom: 1px solid #EDE3D4;
+    line-height: 1.5;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box {
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--burgundy);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* META GRID */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 500px) {
+    .meta-grid { grid-template-columns: 1fr; }
+  }
+  .meta-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .meta-card .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--burgundy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .meta-card .label {
+    font-size: 11px;
+    color: var(--text-mid);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* FUNNEL TABLE */
+  .funnel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 13px;
+  }
+  .funnel-table thead tr {
+    background: var(--burgundy);
+    color: #fff;
+  }
+  .funnel-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .funnel-table tbody tr {
+    border-bottom: 1px solid #EDE3D4;
+    background: #fff;
+  }
+  .funnel-table tbody tr:last-child { border-bottom: none; }
+  .funnel-table tbody td {
+    padding: 10px 14px;
+    color: var(--text-dark);
+    vertical-align: top;
+  }
+  .funnel-table tbody tr:nth-child(even) {
+    background: #F5EFE6;
+  }
+  .price-strong {
+    font-weight: 500;
+    color: var(--burgundy);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+    margin: 28px 0;
+  }
+
+  /* DEPO CARD */
+  .depo-card {
+    background: linear-gradient(135deg, #2A1A0E 0%, #3A2214 100%);
+    border-radius: 12px;
+    padding: 24px 24px 20px;
+    color: #fff;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .depo-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    color: rgba(196,147,74,0.3);
+    line-height: 1;
+  }
+  .depo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 12px;
+    padding-left: 6px;
+  }
+  .depo-label {
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* CTA BUTTON */
+  .cta-wrap {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--card-border);
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--rose);
+    color: var(--burgundy);
+    border: 1.5px solid var(--burgundy);
+    border-radius: 100px;
+    padding: 12px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .cta-btn:hover {
+    background: var(--burgundy);
+    color: var(--gold-light);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1C1008;
+    padding: 24px 40px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+  footer strong {
+    color: var(--gold);
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <p class="header-label">High Level Business &nbsp;|&nbsp; Refinamento Estratégico</p>
+  <h1 class="header-title">Plano de Ação<br><em>Carol Vilas Boas</em></h1>
+  <p class="header-subtitle">Analista de Temperamentos &nbsp;·&nbsp; Mentora Comportamental</p>
+  <div class="header-meta">
+    <span class="meta-pill">📅 Maio 2026</span>
+    <span class="meta-pill">🎯 Meta: 3 vendas no mês</span>
+    <span class="meta-pill">💰 Faturamento alvo: R$ 9.000 – R$ 10.000</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- DIAGNÓSTICO -->
+  <div class="section-label">
+    <div class="icon">🔍</div>
+    <h2>Diagnóstico do Momento</h2>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Onde Você Está Agora</p>
+    <p class="card-body">Você tem <strong>resultado validado</strong> com sua primeira mentorada: 4 encontros que geraram transformação real no controle emocional e na liderança dela. Isso é prova de que sua metodologia funciona. O que está faltando é <strong>direcionamento comercial claro</strong> e <strong>volume de conteúdo</strong> para gerar demanda constante.</p>
+    <div style="margin-top: 12px;">
+      <span class="tag urgent">Pouca produção de conteúdo no último mês</span>
+      <span class="tag urgent">Sem reuniões de vendas ativas</span>
+      <span class="tag gold">1 case de transformação validado</span>
+      <span class="tag gold">Reconhecimento como autoridade (convites para palestras)</span>
+    </div>
+  </div>
+
+  <!-- AJUSTE DE POSICIONAMENTO -->
+  <div class="section-label" style="margin-top: 28px;">
+    <div class="icon">🎯</div>
+    <h2>Ajuste de Posicionamento</h2>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Novo Recorte de Público</p>
+    <p class="card-body">Retire "mulheres casadas" como critério exclusivo. Seu público é <strong>mulheres que vivem sobrecarregadas emocionalmente</strong>, independente do estado civil. A cliente atípica que você atendeu confirmou isso: a dor é a mesma.</p>
+    <div style="margin-top: 10px;">
+      <p class="card-body"><strong>Nova bio sugerida:</strong><br>
+      Mentora comportamental para mulheres · Identidade com leveza · Liberte-se do peso de dar conta de tudo · [link do formulário]</p>
+    </div>
+  </div>
+
+  <!-- OFERTA -->
+  <div class="section-label" style="margin-top: 28px;">
+    <div class="icon">💎</div>
+    <h2>Estrutura de Oferta</h2>
+  </div>
+
+  <table class="funnel-table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Formato</th>
+        <th>Preço</th>
+        <th>Função</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sessão Única</strong><br><small style="color: var(--text-mid)">Ex: "Sessão Viva"</small></td>
+        <td>1 encontro individual (diagnóstico)</td>
+        <td class="price-strong">R$ 300</td>
+        <td>Porta de entrada · Pit de vendas no final</td>
+      </tr>
+      <tr>
+        <td><strong>Acompanhamento 3 meses</strong><br><small style="color: var(--text-mid)">Carro-chefe</small></td>
+        <td>6 encontros individuais (2x/mês) + WhatsApp + análise de temperamento + plano de ação</td>
+        <td class="price-strong">R$ 3.000</td>
+        <td>Produto principal · Validação da metodologia</td>
+      </tr>
+      <tr>
+        <td><strong>Acompanhamento 6 meses</strong></td>
+        <td>Aprofundamento completo</td>
+        <td class="price-strong">R$ 7.000</td>
+        <td>Ancora de preço · Direciona para o do meio</td>
+      </tr>
+      <tr>
+        <td><strong>Front-end (opcional)</strong><br><small style="color: var(--text-mid)">Ex: produto de 1 mês</small></td>
+        <td>Áudios motivacionais + tarefas + 1 sessão final</td>
+        <td class="price-strong">R$ 97</td>
+        <td>Geração de leads e feedbacks · Ciclo de 30 dias</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top: 14px; border-left-color: var(--gold);">
+    <p class="card-title">Como Fazer o Pit da Sessão Única</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Escute a pessoa falar sobre sua vida · permita que ela traga os problemas</li>
+      <li><div class="check-box"></div>Faça o link com o temperamento: "baseado no que você me trouxe, percebo que você tem um perfil que..."</li>
+      <li><div class="check-box"></div>Apresente como diagnóstico, não análise completa · aponte o problema e indique a solução</li>
+      <li><div class="check-box"></div>Use o pit de dois caminhos: <em>"Você pode resolver sozinha... ou com meu acompanhamento"</em></li>
+      <li><div class="check-box"></div>Apresente os 3 pacotes e deixe ela escolher</li>
+    </ul>
+  </div>
+
+  <!-- META DE VENDAS -->
+  <div class="section-label" style="margin-top: 28px;">
+    <div class="icon">📊</div>
+    <h2>Meta e Funil de Maio</h2>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-card">
+      <div class="number">3</div>
+      <div class="label">vendas no mês</div>
+    </div>
+    <div class="meta-card">
+      <div class="number">16</div>
+      <div class="label">reuniões necessárias<br><small style="font-size: 10px; color: #aaa;">(taxa de conversão 40%)</small></div>
+    </div>
+    <div class="meta-card">
+      <div class="number">4</div>
+      <div class="label">reuniões por semana</div>
+    </div>
+    <div class="meta-card">
+      <div class="number">30</div>
+      <div class="label">pessoas para conversar<br><small style="font-size: 10px; color: #aaa;">(para gerar 16 agendamentos)</small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Lógica do Funil</p>
+    <p class="card-body">
+      <strong>Conteúdo</strong> gera lead → <strong>Conversa</strong> agenda a reunião → <strong>Reunião</strong> fecha a venda.<br><br>
+      Não espere terminar o acompanhamento de uma mentorada para começar a vender para outra. Venda todo mês, sempre.
+    </p>
+  </div>
+
+  <!-- PLANO DE AÇÃO -->
+  <div class="section-label" style="margin-top: 28px;">
+    <div class="icon">⚡</div>
+    <h2>Plano de Ação Imediato</h2>
+  </div>
+
+  <div class="card">
+    <p class="card-title">1. Validar Metodologia com 3 Amigas (Esta Semana)</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Escolha 3 amigas com <strong>potencial real de compra</strong></li>
+      <li><div class="check-box"></div>Ofereça 1 sessão gratuita de análise de temperamento em troca de feedback</li>
+      <li><div class="check-box"></div>Deixe claro que não é de graça: a contrapartida é feedback gravado + depoimento escrito</li>
+      <li><div class="check-box"></div>No final da sessão, apresente o acompanhamento de 3 meses com condição especial</li>
+      <li><div class="check-box"></div>Grave um trecho de cada reunião para usar como bastidor</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-title">2. Lançar a Sessão Única (Esta Semana)</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Crie 4 vagas para a "Sessão Viva" (ou nome que preferir) a R$ 300</li>
+      <li><div class="check-box"></div>Poste nos Stories e no Status do WhatsApp</li>
+      <li><div class="check-box"></div>Na sessão: faça o diagnóstico de temperamento como se fosse "ler" a pessoa · não entregue a análise completa</li>
+      <li><div class="check-box"></div>No final: pit de dois caminhos → apresente os 3 programas</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-title">3. Gerar Bastidores e Conteúdo de Desejo (Diário)</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Grave 3-5 minutos de cada reunião (com autorização) e transforme em story de bastidor</li>
+      <li><div class="check-box"></div>Filme a preparação de uma devolutiva: tela do computador + narração do que está analisando</li>
+      <li><div class="check-box"></div>Poste o depoimento que você já tem da sua primeira mentorada</li>
+      <li><div class="check-box"></div>Crie conteúdos de temperamento em contextos do dia a dia: filha, marido, chefe, colega de trabalho</li>
+      <li><div class="check-box"></div>Poste tudo no Instagram E no status do WhatsApp simultaneamente</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-title">4. Ativar Funil de Palestras (Ainda este Mês)</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Faça um vídeo/story mostrando os eventos recentes de abril onde você palestrou</li>
+      <li><div class="check-box"></div>Inclua CTA: "Se quiser meu treinamento na sua empresa, me chama no link da bio"</li>
+      <li><div class="check-box"></div>Na próxima palestra: use QR Code no final com formulário de agendamento</li>
+      <li><div class="check-box"></div>Ofereça as 5 primeiras pessoas uma "análise de diagnóstico" gratuita (= sua call de vendas)</li>
+      <li><div class="check-box"></div>Saia de toda palestra com contatos de pessoas interessadas</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p class="card-title">5. Profissionalizar a Entrega (Antes da Próxima Venda)</p>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Crie um <strong>Grupo VIP no WhatsApp</strong> com você, a cliente e um número de "escritório"</li>
+      <li><div class="check-box"></div>Após cada encontro: envie o link da gravação e o plano de ação em PDF no grupo</li>
+      <li><div class="check-box"></div>Suba gravação + plano de ação no Google Drive de cada cliente</li>
+      <li><div class="check-box"></div>Use a IA para organizar a transcrição e gerar o plano de ação profissionalmente</li>
+    </ul>
+  </div>
+
+  <!-- DEPOIMENTO -->
+  <div class="divider"></div>
+
+  <div class="section-label">
+    <div class="icon">💬</div>
+    <h2>Seu Case de Transformação</h2>
+  </div>
+
+  <div class="depo-card">
+    <p class="depo-text">"Foi transformador. Além de descobrir a minha força, você me ajudou a recuperar minha confiança e desenvolver a clareza. Sua mentoria provocou em mim mudanças reais. Me ajudou a ampliar minha visão e a reconhecer minhas conquistas e fortalecer minhas decisões."</p>
+    <p class="depo-label">Primeira Mentorada &nbsp;·&nbsp; Carol Vilas Boas</p>
+  </div>
+
+  <div class="card" style="border-left-color: var(--gold);">
+    <p class="card-title">Como Usar Esse Depoimento</p>
+    <p class="card-body">Post o depoimento seguido de: <em>"Esse tipo de depoimento aquece meu coração. E é exatamente por isso que abri vagas para minha sessão de análise comportamental."</em><br><br>
+    Não explique muito. Deixe o resultado falar. Seu trabalho está validado.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--burgundy); margin-bottom: 16px;">
+      Você já tem o resultado. Agora é hora de vender.
+    </p>
+    <a href="https://renatamadeu.com.br/obrigado-aplicacao/" class="cta-btn">
+      Quero fazer parte da High Level
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Produzido com carinho por <strong>Renata Amadeu</strong> &nbsp;·&nbsp; High Level Business &nbsp;·&nbsp; Maio 2026</p>
+</footer>
+
+</body>
+</html>
