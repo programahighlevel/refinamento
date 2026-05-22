@@ -1,1 +1,1238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de Ação · Bruna Prado · High Level</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brown-dark:  #2A1A0E;
+      --brown-mid:   #3A2214;
+      --brown-light: #4E3020;
+      --gold:        #C4934A;
+      --gold-light:  #D4AC72;
+      --gold-pale:   #EED9B0;
+      --gold-wash:   #F7EFE0;
+      --cream:       #FAF6F0;
+      --parchment:   #F2E8D8;
+      --text-dark:   #1C1008;
+      --text-mid:    #3A2A18;
+      --text-soft:   #7A6040;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--brown-dark);
+      color: var(--gold-pale);
+      padding: 48px 56px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,147,74,.15);
+      pointer-events: none;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 40%;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,147,74,.1);
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 300;
+      letter-spacing: -.01em;
+      line-height: 1.1;
+      color: var(--gold-pale);
+      margin-bottom: 6px;
+    }
+    header h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .subtitle {
+      font-size: 13px;
+      color: rgba(238,217,176,.55);
+      font-weight: 300;
+      letter-spacing: .04em;
+      margin-bottom: 28px;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      background: rgba(196,147,74,.12);
+      border: 1px solid rgba(196,147,74,.3);
+      color: var(--gold-light);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .06em;
+    }
+
+    /* ── INTRO BANNER ── */
+    .intro-banner {
+      background: var(--parchment);
+      border-left: 4px solid var(--gold);
+      padding: 28px 56px;
+    }
+    .intro-banner p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 780px;
+    }
+
+    /* ── PROJEÇÃO FINANCEIRA ── */
+    .proj-section {
+      background: var(--brown-dark);
+      padding: 40px 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,147,74,.1);
+      pointer-events: none;
+    }
+    .proj-section::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,147,74,.08);
+      pointer-events: none;
+    }
+    .proj-eyebrow {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .proj-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--gold-pale);
+      margin-bottom: 4px;
+      letter-spacing: -.01em;
+    }
+    .proj-subtitle {
+      font-size: 12px;
+      color: rgba(238,217,176,.45);
+      margin-bottom: 32px;
+      letter-spacing: .03em;
+    }
+    .proj-premise {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .proj-pill {
+      background: rgba(196,147,74,.12);
+      border: 1px solid rgba(196,147,74,.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      color: var(--gold-light);
+      letter-spacing: .04em;
+    }
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .proj-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(196,147,74,.2);
+      position: relative;
+    }
+    .proj-card.highlight {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(196,147,74,.3), 0 8px 32px rgba(0,0,0,.25);
+    }
+    .proj-card-badge {
+      position: absolute;
+      top: -1px; right: 12px;
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 0 0 6px 6px;
+    }
+    .proj-card-head {
+      background: rgba(255,255,255,.04);
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid rgba(196,147,74,.15);
+    }
+    .proj-scenario {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .proj-participants {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold-pale);
+      line-height: 1.1;
+    }
+    .proj-participants span {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(238,217,176,.5);
+      margin-left: 4px;
+    }
+    .proj-card-body { padding: 16px 18px; background: rgba(255,255,255,.03); }
+    .proj-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(196,147,74,.08);
+      font-size: 11.5px;
+    }
+    .proj-row:last-child { border-bottom: none; }
+    .proj-row-label { color: rgba(238,217,176,.5); }
+    .proj-row-val { color: var(--gold-light); font-weight: 500; }
+    .proj-row-val.accent { color: var(--gold); }
+    .proj-row-val.dim { color: rgba(238,217,176,.4); }
+    .proj-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(196,147,74,.3);
+    }
+    .proj-total-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(238,217,176,.6);
+    }
+    .proj-total-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-pale);
+    }
+    .proj-card.highlight .proj-total-val { color: var(--gold-light); }
+
+    .proj-bars {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(196,147,74,.15);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+    .proj-bars-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(238,217,176,.45);
+      margin-bottom: 16px;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .bar-row:last-child { margin-bottom: 0; }
+    .bar-label { width: 130px; font-size: 11px; color: rgba(238,217,176,.55); flex-shrink: 0; text-align: right; }
+    .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,.06); border-radius: 99px; overflow: hidden; }
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+      transform-origin: left;
+      animation: barGrow .9s cubic-bezier(.4,0,.2,1) forwards;
+      transform: scaleX(0);
+    }
+    @keyframes barGrow { to { transform: scaleX(1); } }
+    .bar-val { width: 90px; font-size: 12px; font-weight: 600; color: var(--gold-light); text-align: right; flex-shrink: 0; }
+    .bar-val.dim { color: rgba(238,217,176,.45); font-weight: 400; }
+
+    /* ── BODY ── */
+    .body-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 56px 64px;
+    }
+
+    /* ── SECTION HEADING ── */
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin: 48px 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(196,147,74,.35);
+    }
+    .sec-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 36px;
+    }
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--brown-dark);
+      letter-spacing: .01em;
+    }
+
+    /* ── SPOTLIGHT ── */
+    .spotlight {
+      background: var(--brown-dark);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight::after {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 1px solid rgba(196,147,74,.12);
+      pointer-events: none;
+    }
+    .spotlight-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .spotlight h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gold-pale);
+      margin-bottom: 10px;
+    }
+    .spotlight p {
+      font-size: 13.5px;
+      color: rgba(238,217,176,.75);
+      line-height: 1.7;
+    }
+    .spotlight p b { color: var(--gold-light); }
+
+    /* ── TABELA ── */
+    .tbl-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(196,147,74,.25);
+      margin-bottom: 18px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: var(--brown-mid); }
+    th {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      padding: 12px 16px;
+      text-align: left;
+    }
+    td {
+      padding: 12px 16px;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(196,147,74,.12);
+      vertical-align: top;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--gold-wash); }
+    tbody tr:nth-child(even) td { background: rgba(242,232,216,.35); }
+    tbody tr:nth-child(even):hover td { background: var(--gold-wash); }
+
+    .tag {
+      display: inline-block;
+      border-radius: 12px;
+      padding: 3px 10px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+    .tag-now  { background: var(--brown-dark); color: var(--gold-light); }
+    .tag-week { background: #8a5f1a; color: #fde9b8; }
+    .tag-soon { background: var(--parchment); color: var(--text-soft); border: 1px solid rgba(196,147,74,.3); }
+
+    /* ── GRID 2 ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+    .card {
+      border: 1px solid rgba(196,147,74,.3);
+      border-radius: 8px;
+      padding: 20px;
+      background: #fff;
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .card-icon {
+      width: 36px; height: 36px;
+      background: var(--parchment);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .card-icon.gold { background: var(--brown-dark); }
+    .card-kicker {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .card-list { list-style: none; padding: 0; }
+    .card-list li {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(196,147,74,.1);
+    }
+    .card-list li:last-child { border-bottom: none; }
+
+    /* ── CARD FULL ── */
+    .card-full {
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .card-full-head {
+      background: var(--brown-dark);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+    }
+    .card-full-icon { font-size: 18px; }
+    .card-full-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--gold-pale);
+    }
+    .card-full-body {
+      padding: 16px 20px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      background: #fff;
+    }
+    .card-full-body b { color: var(--brown-dark); }
+
+    /* ── FUNIL ── */
+    .funnel-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid rgba(196,147,74,.25);
+    }
+    .funnel-row { display: flex; align-items: stretch; }
+    .funnel-row:nth-child(even) .funnel-left { background: var(--brown-mid); }
+    .funnel-row:nth-child(even) .funnel-right { background: rgba(242,232,216,.4); }
+    .funnel-left {
+      background: var(--brown-dark);
+      padding: 18px 20px;
+      min-width: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .funnel-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .funnel-tier {
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(238,217,176,.5);
+      margin-top: 4px;
+    }
+    .funnel-right {
+      flex: 1;
+      background: #fff;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(196,147,74,.15);
+    }
+    .funnel-row:last-child .funnel-right { border-bottom: none; }
+    .funnel-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .funnel-desc { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; }
+
+    /* ── CHECKLIST ── */
+    .checklist-wrap {
+      border: 1px solid rgba(196,147,74,.3);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .checklist-head {
+      background: var(--parchment);
+      padding: 12px 20px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      border-bottom: 1px solid rgba(196,147,74,.2);
+    }
+    .cl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 20px;
+      border-bottom: 1px solid rgba(196,147,74,.1);
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .cl-item:last-child { border-bottom: none; }
+    .cl-item:hover { background: var(--gold-wash); }
+    .cl-item.done { background: rgba(196,147,74,.08); }
+    .cl-box {
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--gold);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all .15s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cl-item.done .cl-box { background: var(--gold); }
+    .cl-item.done .cl-box::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 700; }
+    .cl-text { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
+    .cl-item.done .cl-text { text-decoration: line-through; color: var(--text-soft); }
+    .cl-text b { color: var(--text-dark); }
+    .cl-item.done .cl-text b { color: var(--text-soft); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-dark);
+      padding: 24px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--gold);
+    }
+    .footer-meta { font-size: 11px; color: rgba(238,217,176,.5); letter-spacing: .06em; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      header, footer, .proj-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .spotlight, .tbl-wrap, .funnel-wrap, .card, .card-full, .checklist-wrap, .proj-card, .proj-bars {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        break-inside: avoid;
+      }
+      .body-wrap { padding: 32px 40px; }
+      .proj-section { padding: 32px 40px; }
+      header, .intro-banner { padding-left: 40px; padding-right: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      header, .intro-banner, .proj-section, footer { padding-left: 24px; padding-right: 24px; }
+      .body-wrap { padding: 32px 24px; }
+      header h1 { font-size: 34px; }
+      .grid-2, .proj-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="eyebrow">High Level · Clínica Bruna Prado · Plano de Ação</div>
+  <h1>Bruna <em>Prado</em></h1>
+  <p class="subtitle">Gestora Clínica · Método Bruna Prado · Estética &amp; Saúde Capilar</p>
+  <div class="pills">
+    <span class="pill">15.05.2026</span>
+    <span class="pill">Refinamento Estratégico</span>
+    <span class="pill">Delegação Comercial &amp; Escala</span>
+  </div>
+</header>
+
+<!-- ═══════════════ INTRO BANNER ═══════════════ -->
+<div class="intro-banner">
+  <p>
+    Bruna, o nosso diagnóstico nesse encontro foi muito claro: o seu marketing funciona, a sua entrega funciona — o gargalo está no <b>pilar comercial</b>. Você tem mais de 80 leads parados no WhatsApp e ninguém dedicado a convertê-los. Minha orientação central é: <b>contrate agora para crescer agora</b>. Em paralelo, vamos organizar as suas finanças e ativar as ferramentas certas para você sair do patamar de R$ 45–50k e chegar à sua meta de <em>R$ 100 mil mensais</em>.
+  </p>
+</div>
+
+<!-- ═══════════════ PROJEÇÃO FINANCEIRA ═══════════════ -->
+<div class="proj-section">
+  <div class="proj-eyebrow">Projeção Financeira · Cenários de Faturamento Mensal</div>
+  <div class="proj-title">Do Patamar Atual à Meta de R$ 100k</div>
+  <div class="proj-subtitle">Faturamento atual: R$ 45–50k/mês &nbsp;·&nbsp; Produtos: R$ 11–13k &nbsp;·&nbsp; Meta: R$ 100k/mês</div>
+
+  <div class="proj-premise">
+    <span class="proj-pill">📍 Atual: R$ 45–50k/mês</span>
+    <span class="proj-pill">🛍️ Produtos hoje: R$ 11–13k</span>
+    <span class="proj-pill">💡 Referência Noeli: R$ 30k só em produtos</span>
+    <span class="proj-pill">🎯 Meta: R$ 100k/mês</span>
+  </div>
+
+  <div class="proj-grid">
+
+    <!-- CENÁRIO ATUAL -->
+    <div class="proj-card">
+      <div class="proj-card-head">
+        <div class="proj-scenario">Cenário Atual</div>
+        <div class="proj-participants">Sem comercial <span>dedicado</span></div>
+      </div>
+      <div class="proj-card-body">
+        <div class="proj-row">
+          <span class="proj-row-label">Consultas / protocolos</span>
+          <span class="proj-row-val dim">R$ 35–38k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Venda de produtos</span>
+          <span class="proj-row-val dim">R$ 11–13k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Leads perdidos / mês</span>
+          <span class="proj-row-val dim">80+ conversas</span>
+        </div>
+        <div class="proj-total-row">
+          <span class="proj-total-label">Total</span>
+          <span class="proj-total-val">~R$ 48k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COM COMERCIAL — DESTAQUE -->
+    <div class="proj-card highlight">
+      <div class="proj-card-badge">⭐ Próximo nível</div>
+      <div class="proj-card-head">
+        <div class="proj-scenario">Com Assistente Comercial</div>
+        <div class="proj-participants">Conversão de leads <span>ativa</span></div>
+      </div>
+      <div class="proj-card-body">
+        <div class="proj-row">
+          <span class="proj-row-label">Consultas / protocolos</span>
+          <span class="proj-row-val accent">R$ 50–55k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Produtos (upsell ativo)</span>
+          <span class="proj-row-val accent">R$ 20–25k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Leads convertidos</span>
+          <span class="proj-row-val accent">fluxo contínuo</span>
+        </div>
+        <div class="proj-total-row">
+          <span class="proj-total-label">Total projetado</span>
+          <span class="proj-total-val">~R$ 75k</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- META 100K -->
+    <div class="proj-card">
+      <div class="proj-card-head">
+        <div class="proj-scenario">Meta · Escala Completa</div>
+        <div class="proj-participants">Método replicado <span>pela equipe</span></div>
+      </div>
+      <div class="proj-card-body">
+        <div class="proj-row">
+          <span class="proj-row-label">Consultas + equipe</span>
+          <span class="proj-row-val">R$ 65–70k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Produtos (ref. Noeli)</span>
+          <span class="proj-row-val">R$ 30k</span>
+        </div>
+        <div class="proj-row">
+          <span class="proj-row-label">Novas salas ocupadas</span>
+          <span class="proj-row-val">100%</span>
+        </div>
+        <div class="proj-total-row">
+          <span class="proj-total-label">Meta</span>
+          <span class="proj-total-val">R$ 100k</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /proj-grid -->
+
+  <div class="proj-bars">
+    <div class="proj-bars-title">Evolução de faturamento por cenário</div>
+    <div class="bar-row">
+      <span class="bar-label">Atual (sem comercial)</span>
+      <div class="bar-track"><div class="bar-fill" style="width:48%; animation-delay:.1s"></div></div>
+      <span class="bar-val dim">~R$ 48k</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">Com assistente ⭐</span>
+      <div class="bar-track"><div class="bar-fill" style="width:75%; animation-delay:.25s"></div></div>
+      <span class="bar-val">~R$ 75k</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">Meta · Escala</span>
+      <div class="bar-track"><div class="bar-fill" style="width:100%; animation-delay:.4s"></div></div>
+      <span class="bar-val">R$ 100k</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ BODY ═══════════════ -->
+<div class="body-wrap">
+
+  <!-- ─── 01 · DIAGNÓSTICO ESTRATÉGICO ─── -->
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div class="sec-title">Diagnóstico Estratégico · O Gargalo Real</div>
+  </div>
+
+  <div class="spotlight">
+    <div class="spotlight-label">Diagnóstico Central · Alta Prioridade</div>
+    <h3>O seu marketing funciona. A sua entrega funciona. O pilar comercial é o buraco.</h3>
+    <p>
+      Você tem tráfego pago gerando leads em volume. Mas com <b>80+ conversas pendentes no WhatsApp</b> e você sendo a única pessoa cuidando do comercial, o seu negócio perde receita todo dia. O crescimento não está sendo bloqueado pela falta de clientes — está sendo bloqueado pela falta de alguém para <b>atender, agendar e converter</b> esses clientes.
+    </p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">✅</div>
+        <div>
+          <div class="card-kicker">O que já funciona</div>
+          <div class="card-title">Seus Pilares Sólidos</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Marketing e tráfego pago gerando leads consistentes</li>
+        <li>Carla na execução há 3 anos — equipe confiável</li>
+        <li>Raciocínio clínico e protocolos personalizados</li>
+        <li>Reputação e autoridade como especialista</li>
+        <li>Resultado reconhecido pelos seus pacientes</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon gold">🚨</div>
+        <div>
+          <div class="card-kicker">O que está travando você</div>
+          <div class="card-title">Gargalos Críticos</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>80+ leads no WhatsApp sem resposta</li>
+        <li>Sem gestão comercial dedicada</li>
+        <li>Você consome 2–3h por caso clínico — sobrecarga total</li>
+        <li>Contas PJ e PF misturadas — lucro real invisível</li>
+        <li>Salas disponíveis sem ocupação máxima</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── 02 · CONTRATAÇÃO DA ASSISTENTE COMERCIAL ─── -->
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div class="sec-title">Contratação · Assistente Administrativo-Comercial</div>
+  </div>
+
+  <div class="spotlight">
+    <div class="spotlight-label">Decisão Estratégica · Não Espere para Contratar</div>
+    <h3>Contrate para crescer — não espere crescer para contratar</h3>
+    <p>
+      Eu dobrei o meu faturamento quando deleguei o atendimento comercial. A lógica para você é exatamente a mesma: a contratação <b>viabiliza</b> o crescimento — não é consequência dele. Cada semana que passa sem a sua assistente são mais leads perdidos nessas 80 conversas paradas.
+    </p>
+  </div>
+
+  <div class="card-full">
+    <div class="card-full-head">
+      <div class="card-full-icon">👩‍💼</div>
+      <div class="card-full-title">Perfil da Vaga · Assistente Administrativo-Comercial</div>
+    </div>
+    <div class="card-full-body">
+      O foco precisa ser em <b>recepção presencial, vendas de produtos e agendamento de pacientes</b>. Quero que você busque alguém com boa comunicação, perfil comercial ativo e capacidade de gerenciar WhatsApp e agenda ao mesmo tempo. Presencial é obrigatório — você precisa de alguém físico para nota fiscal, recepção de pacientes e venda de produtos no balcão. Minha indicação é usar o <b>serviço de recrutamento da Ana Paula (High Level)</b> para fazer a pré-triagem — assim você só entrevista quem realmente vale o seu tempo.
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Etapa do Processo Seletivo</th>
+          <th>Como fazer</th>
+          <th>Prioridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Criar anúncio da vaga</b></td>
+          <td>Usar ChatGPT para gerar imagem em formato de story/status para divulgar nos contatos</td>
+          <td><span class="tag tag-now">Agora</span></td>
+        </tr>
+        <tr>
+          <td><b>Publicar e divulgar</b></td>
+          <td>Status do WhatsApp, Instagram stories, seu círculo de contatos</td>
+          <td><span class="tag tag-now">Agora</span></td>
+        </tr>
+        <tr>
+          <td><b>Acionar Ana Paula (HL)</b></td>
+          <td>Receber contato via Renata Amadeu e iniciar pré-triagem dos candidatos</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Entrevistas</b></td>
+          <td>Você entrevista apenas os perfis pré-aprovados pela triagem da Ana Paula</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Documentar processos no treino</b></td>
+          <td>Registrar scripts e procedimentos enquanto treina a nova pessoa</td>
+          <td><span class="tag tag-soon">Em breve</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 03 · REMUNERAÇÃO E COMISSIONAMENTO ─── -->
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div class="sec-title">Remuneração &amp; Sistema de Comissões</div>
+  </div>
+
+  <div class="funnel-wrap">
+    <div class="funnel-row">
+      <div class="funnel-left">
+        <div class="funnel-price">R$ 1.500<br>–1.800</div>
+        <div class="funnel-tier">Fixo mensal</div>
+      </div>
+      <div class="funnel-right">
+        <div class="funnel-name">Salário Base · Assistente Comercial</div>
+        <div class="funnel-desc">Fixo mensal para garantir estabilidade e comprometimento da sua nova pessoa. Valor equilibrado com as comissões variáveis — ela precisa ter segurança para focar em vender.</div>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-left">
+        <div class="funnel-price">5%</div>
+        <div class="funnel-tier">Comissão</div>
+      </div>
+      <div class="funnel-right">
+        <div class="funnel-name">Comissão sobre Vendas de Produtos</div>
+        <div class="funnel-desc">5% sobre cada venda de produto realizada. Isso incentiva o upsell ativo no balcão e no WhatsApp. Quanto mais ela vender, mais ela ganha — e mais você fatura.</div>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-left">
+        <div class="funnel-price">Bônus</div>
+        <div class="funnel-tier">Por meta</div>
+      </div>
+      <div class="funnel-right">
+        <div class="funnel-name">Bônus por Agendamento Qualificado</div>
+        <div class="funnel-desc">Bônus por consultas e novos protocolos agendados e confirmados. Esse é o foco principal da função: converter os seus leads do WhatsApp em pacientes sentados na sua cadeira. Vou te enviar uma sugestão de estrutura de bônus.</div>
+      </div>
+    </div>
+    <div class="funnel-row">
+      <div class="funnel-left">
+        <div class="funnel-price">Carla</div>
+        <div class="funnel-tier">Diferenciado</div>
+      </div>
+      <div class="funnel-right">
+        <div class="funnel-name">Comissão da Carla · Execução de Protocolos</div>
+        <div class="funnel-desc">A Carla (3 anos na sua equipe, paga por produtividade) foca na finalização de serviços como gloss. A comissão dela é separada e diferente da nova assistente — não misture as funções nem os incentivos.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 04 · ORGANIZAÇÃO FINANCEIRA ─── -->
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div class="sec-title">Organização Financeira · Clareza para Escalar</div>
+  </div>
+
+  <div class="spotlight">
+    <div class="spotlight-label">Problema Atual · Urgente</div>
+    <h3>O dinheiro entra — mas o seu lucro real está invisível</h3>
+    <p>
+      Você me contou que o dinheiro entra, mas não consegue enxergar o que sobra de verdade. Contas PJ e PF misturadas, pró-labore sem valor fixo, fluxo de caixa sem controle. Sem essa clareza, é impossível crescer com segurança. <b>Organizar as suas finanças não é detalhe: é pré-requisito da escala.</b>
+    </p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">📊</div>
+        <div>
+          <div class="card-kicker">Passo 1</div>
+          <div class="card-title">Planilha de Custos Completa</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Liste todos os seus custos fixos da clínica</li>
+        <li>Liste todos os seus custos variáveis</li>
+        <li>Separe seus gastos pessoais (PF) dos profissionais (PJ)</li>
+        <li>Inclua os financiamentos da obra da nova unidade</li>
+        <li>Identifique onde o seu caixa está sangrando</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon gold">💰</div>
+        <div>
+          <div class="card-kicker">Passo 2</div>
+          <div class="card-title">Pró-labore Fixo Mensal</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Defina um valor fixo de retirada mensal para a sua PF</li>
+        <li>Pare de usar o caixa da clínica para gastos pessoais</li>
+        <li>Separe a conta bancária PJ da sua conta pessoal</li>
+        <li>Toda retirada extra passa pela aprovação do fluxo</li>
+        <li>Essa disciplina é o que diferencia quem escala de verdade</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card-full">
+    <div class="card-full-head">
+      <div class="card-full-icon">🤖</div>
+      <div class="card-full-title">Claude (IA) · Dashboards e Análise Financeira Automatizada</div>
+    </div>
+    <div class="card-full-body">
+      Minha recomendação é que você use o <b>Claude</b> para processar os dados financeiros que você vai organizar na planilha e gerar <b>dashboards de acompanhamento, ticket médio, lucro real e indicadores de performance</b>. Ele é muito mais poderoso que o ChatGPT para esse tipo de gestão: funciona como um assistente executivo, gerencia arquivos, cria sites e automatiza cronogramas. Eu assino o plano completo por R$ 500/mês e ele substituiu serviços de design externos que me cobravam R$ 1.500 por página. Vale muito.
+    </div>
+  </div>
+
+  <!-- ─── 05 · FERRAMENTAS E AUTOMAÇÃO ─── -->
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div class="sec-title">Ferramentas &amp; Automação da Clínica</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">🔗</div>
+        <div>
+          <div class="card-kicker">Captação de Leads</div>
+          <div class="card-title">High Level · Questionário na Bio</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Implemente o questionário integrado ao link da sua bio</li>
+        <li>A paciente preenche os dados antes de agendar</li>
+        <li>Sua assistente entra em contato para finalizar o agendamento</li>
+        <li>Isso elimina o gargalo das 80+ conversas sem resposta</li>
+        <li>Você qualifica o lead antes do primeiro contato</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon gold">🧠</div>
+        <div>
+          <div class="card-kicker">Protocolos Clínicos</div>
+          <div class="card-title">IA para Otimização de Casos</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Use o Claude para processar os seus casos clínicos</li>
+        <li>Gere protocolos personalizados automaticamente</li>
+        <li>Documentos profissionais prontos para enviar à paciente</li>
+        <li>Reduza de 2–3h para minutos por caso</li>
+        <li>Libere o seu tempo para gestão e estratégia</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── 06 · MÉTODO BRUNA PRADO & MARCA ─── -->
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <div class="sec-title">Método Bruna Prado · Marca &amp; Autoridade</div>
+  </div>
+
+  <div class="spotlight">
+    <div class="spotlight-label">Decisão Estratégica · Marca</div>
+    <h3>Mantém o nome. Escala o método.</h3>
+    <p>
+      Você me trouxe a dúvida de mudar o nome da clínica. Meu conselho é: não muda. O seu nome próprio é um <b>ativo de autoridade</b> que você já construiu. O que precisa acontecer é posicionar o <b>"Método Bruna Prado"</b> como um sistema replicável pela sua equipe — você cria o raciocínio clínico, a equipe executa. Como salões de alto padrão: o atendimento pela equipe tem um valor, o atendimento pela especialista líder tem outro.
+    </p>
+  </div>
+
+  <div class="card-full">
+    <div class="card-full-head">
+      <div class="card-full-icon">✂️</div>
+      <div class="card-full-title">Carla · Expansão de Responsabilidades em Junho</div>
+    </div>
+    <div class="card-full-body">
+      A Carla se forma como <b>terapeuta capilar em junho</b> e vai poder assumir responsabilidades adicionais na execução dos seus protocolos. Isso vai liberar ainda mais o seu tempo para gestão, estratégia e — no médio prazo — para você desenvolver os seus <b>cursos</b>. A delegação da área de vendas com a Carla ainda precisa ser trabalhada, mas a trajetória já está desenhada.
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">📦</div>
+        <div>
+          <div class="card-kicker">Oportunidade Imediata</div>
+          <div class="card-title">Upsell de Produtos · Meta R$ 30k</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Referência: a Noeli fatura R$ 30k/mês só em produtos</li>
+        <li>Você está em R$ 11–13k — dobrar exige comercial ativo</li>
+        <li>Prepare kits de produtos para upsell pós-consulta</li>
+        <li>Treine sua assistente para oferecer produtos no atendimento</li>
+        <li>Use a campanha Gloss (premiação: viagem à Itália) como alavanca agora</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon gold">📚</div>
+        <div>
+          <div class="card-kicker">Próximo Nível</div>
+          <div class="card-title">Cursos · Médio Prazo</div>
+        </div>
+      </div>
+      <ul class="card-list">
+        <li>Se afaste parcialmente da operação diária</li>
+        <li>Crie tempo hábil para desenvolver os seus cursos</li>
+        <li>Método Bruna Prado como produto educacional</li>
+        <li>Nova fonte de receita sem precisar da sua presença física</li>
+        <li>Viável depois que a sua equipe estiver treinada e autônoma</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── 07 · PLANO DE AÇÃO ─── -->
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <div class="sec-title">Plano de Ação · Próximos Passos</div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Responsável</th>
+          <th>Ação</th>
+          <th>Prazo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Criar anúncio da vaga via ChatGPT (story/status) e publicar nos contatos</td>
+          <td><span class="tag tag-now">Hoje</span></td>
+        </tr>
+        <tr>
+          <td><b>Eu (Renata)</b></td>
+          <td>Enviar contato de Ana Paula (High Level) para pré-triagem do processo seletivo</td>
+          <td><span class="tag tag-now">Hoje</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Montar planilha com todos os custos fixos, variáveis da clínica e gastos pessoais</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Alimentar Claude com dados financeiros e gerar dashboard de indicadores</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Eu (Renata)</b></td>
+          <td>Pesquisar e enviar estrutura de bônus sugerida para o cargo de assistente</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Iniciar processo seletivo e entrevistar candidatos pré-triados pela Ana Paula</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Definir valor fixo de pró-labore mensal e separar conta PJ da PF</td>
+          <td><span class="tag tag-week">Esta semana</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Implementar questionário de pré-qualificação no link da bio (High Level)</td>
+          <td><span class="tag tag-soon">Em breve</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Documentar script de atendimento e processos de recepção durante o treinamento da nova pessoa</td>
+          <td><span class="tag tag-soon">Em breve</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Preparar kits de upsell de produtos e treinar assistente para oferecer no atendimento</td>
+          <td><span class="tag tag-soon">Em breve</span></td>
+        </tr>
+        <tr>
+          <td><b>Você</b></td>
+          <td>Usar Claude para automatizar geração de protocolos clínicos por caso</td>
+          <td><span class="tag tag-soon">Em breve</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 08 · CHECKLIST DE EXECUÇÃO ─── -->
+  <div class="sec-head">
+    <div class="sec-num">08</div>
+    <div class="sec-title">Checklist de Execução</div>
+  </div>
+
+  <div class="checklist-wrap">
+    <div class="checklist-head">Marque conforme for avançando</div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Crie e publique o anúncio da vaga</b> — gere no ChatGPT, poste como story/status e divulgue no seu círculo de contatos hoje mesmo</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Receber contato da Ana Paula (High Level)</b> — ativar a pré-triagem de candidatos para garantir entrevistas apenas com os perfis certos</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Montar planilha financeira completa</b> — listar todos os custos fixos, variáveis, financiamentos e separar PJ de PF com clareza</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Definir pró-labore fixo mensal</b> — estabelecer valor de retirada pessoal e parar de sangrar o caixa da clínica com gastos pessoais</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Alimentar Claude com os dados financeiros</b> — gerar dashboards, ticket médio e indicadores de performance automaticamente</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Contratar a assistente administrativo-comercial</b> — fixo R$ 1.500–1.800 + 5% comissão em produtos + bônus por agendamento qualificado</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Documentar scripts e processos durante o treinamento</b> — garantir que o conhecimento saia da sua cabeça e entre em um documento que qualquer pessoa da equipe consiga seguir</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Implemente o questionário de pré-qualificação no link da bio</b> — elimine as 80+ conversas paradas e crie um fluxo de atendimento automatizado</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Prepare os kits de upsell e treine a sua assistente em produtos</b> — a meta é chegar em R$ 20–25k de produtos com ela ativa, rumo aos R$ 30k da Noeli</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Usar Claude para gerar protocolos clínicos automaticamente</b> — reduza de 2–3h para minutos por caso e libere o seu tempo para gerir e crescer</div>
+    </div>
+
+    <div class="cl-item" onclick="toggle(this)">
+      <div class="cl-box"></div>
+      <div class="cl-text"><b>Acompanhe a evolução rumo à meta de R$ 100k/mês</b> — revise os seus indicadores mensalmente com o dashboard gerado pelo Claude</div>
+    </div>
+
+  </div>
+
+</div><!-- /body-wrap -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-brand">HIGH LEVEL</div>
+  <div class="footer-meta">Mentora Renata Amadeu &nbsp;·&nbsp; 15.05.2026 &nbsp;·&nbsp; Refinamento · Bruna Prado</div>
+</footer>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle('done');
+  }
+</script>
+
+</body>
+</html>
